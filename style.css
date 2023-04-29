@@ -1,0 +1,40 @@
+html {
+  height: 100%;
+  width: 100%;
+  font-size: 1.5rem;
+  background-color: #1b1b1b;
+  color: white;
+}
+
+header {
+  text-align: center;
+}
+
+header,
+main {
+  width: 60%;
+  margin: auto;
+}
+
+dt {
+  font-weight: bold;
+}
+
+li {
+  margin: 7px;
+}
+
+@media (max-width: 840px) {
+  header,
+  main {
+    width: 80%;
+  }
+}
+
+@media (max-width: 440px) {
+  img,
+  header,
+  main {
+    width: 95%;
+  }
+}
