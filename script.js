@@ -91,9 +91,9 @@ function Bill() {
 
 const bill = new Bill();
 
-console.log("bill new --> ", bill);
-console.log("bill.ref new --> ", bill.ref);
-bill.getThisBasic();
+// console.log("bill new --> ", bill);
+// console.log("bill.ref new --> ", bill.ref);
+// bill.getThisBasic();
 
 function Person(name, age) {
   this.name = name;
@@ -107,8 +107,8 @@ function Person(name, age) {
 const kate = new Person("Kate", 18);
 const alesya = new Person("Alesya", 21);
 
-kate.getThisBasic();
-alesya.getThisBasic();
+// kate.getThisBasic();
+// alesya.getThisBasic();
 
 // this  это Window
 function Man(name, age) {
@@ -116,12 +116,7 @@ function Man(name, age) {
   this.age = age;
 }
 
-const person = Man("Alex", 12);
-
-// console.log(person);
-// console.log(name);
-// console.log(window.name);
-// console.log(window.age);
+const person = new Man("Alex", 12);
 
 class Employee {
   // this: {}
@@ -151,15 +146,20 @@ const frontend = new Employee("Jonn", "Travolta", "Frondend programmer", 2500);
 // console.log(frontend)
 // director.logFulName()
 // director.logFullEmployersData()
-director.getThis()
-frontend.getThis()
+// director.getThis();
+// frontend.getThis();
 
 const liElements = document.querySelectorAll("li");
-liElements.forEach(el => el.addEventListener("click", function() { console.log(this) }))
-// liElements.forEach(el => el.addEventListener("click", () => console.log(this)))
+liElements.forEach((el) =>
+  el.addEventListener("click", function () {
+    console.log(this);
+  })
+);
+liElements.forEach((el) =>
+  el.addEventListener("click", () => console.log(this))
+);
 
-const glasha =  function () {
-       
+const glasha = function () {
   return {
     name: "Glasha",
     ref: this,
@@ -167,8 +167,8 @@ const glasha =  function () {
 };
 
 console.log("glasha.ref --> ", glasha.ref);
-console.log('glasha() -> ', glasha())
-console.log('glasha.call() -> ', glasha.call())
+// console.log("glasha() -> ", glasha());
+// console.log("glasha.call() -> ", glasha.call());
 
 const user = {
   name: "Petr",
@@ -191,7 +191,7 @@ const user = {
   },
 };
 
-user.logInfo();
+// user.logInfo();
 
 const dyna = {
   name: "Dyna",
@@ -199,25 +199,25 @@ const dyna = {
   isAdmin: false,
 };
 
-user.logInfo.call(dyna, "dyna@google.com", "+37529-234-44-44")
-user.logInfo.bind(dyna, "dyna@google.com", "+37529-234-44-44")
-user.logInfo.bind(dyna, "dyna@google.com", "+37529-234-44-44")()
-user.logInfo.apply(dyna, ["dyna@google.com", "+37529-234-44-44"])
+// user.logInfo.call(dyna, "dyna@google.com", "+37529-234-44-44");
+// user.logInfo.bind(dyna, "dyna@google.com", "+37529-234-44-44");
+// user.logInfo.bind(dyna, "dyna@google.com", "+37529-234-44-44")();
+// user.logInfo.apply(dyna, ["dyna@google.com", "+37529-234-44-44"]);
 
 const superObj = {
   getThis: function () {
-    console.log("superObj getThis --> ", this); //{getThis: f}
+    console.log("superObj getThis --> ", this); // {getThis: f}
 
     function getThis2() {
       console.log("superObj getThis2 --> ", this); // Window
     }
 
     const getThis3 = () => {
-      console.log("superObj getThis3 --> ", this);  //{getThis: f}
+      console.log("superObj getThis3 --> ", this); // {getThis: f}
     };
 
     const getThis4 = function () {
-      console.log("superObj getThis4 --> ", this);
+      console.log("superObj getThis4 --> ", this); // {name: Dyna, ///}
     };
 
     getThis2();

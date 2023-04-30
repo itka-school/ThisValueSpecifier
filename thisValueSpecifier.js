@@ -215,8 +215,9 @@ class ThisValueSpecifier {
     });
 
     appСontainer.appendChild(buttonsContainer);
-    
+
     const link = document.createElement("a");
+    link.style.fontSize = "0.8rem";
     link.setAttribute("href", this.algorithmSource);
     link.setAttribute("target", "_blank");
     link.innerText = "Первоисточник алгоритма";

@@ -36,5 +36,6 @@ li {
   header,
   main {
     width: 95%;
+    font-size: 1.2rem;
   }
 }
